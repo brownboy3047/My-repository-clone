@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Home</h1>
+
+    <div v-if="repos.length">
+      <RepoList :repos="repos" />
+    </div>
+
+    <div v-else>Loading</div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import getRepos from "../composables/getRepos";
+import RepoList from "../components/RepoList.vue";
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  name: "HomeView",
+  components: { RepoList },
+  setup() {
+    const { repos, error, load } = getRepos();
+
+    console.log(repos);
+
+    load();
+
+    return { repos, error };
+  },
+};
 </script>

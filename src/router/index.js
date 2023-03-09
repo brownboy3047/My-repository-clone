@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import About from "../views/About.vue";
 import RepoDetails from "../views/RepoDetails.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
@@ -19,6 +20,13 @@ const routes = [
     name: "RepoDetails",
     component: RepoDetails,
     props: true,
+  },
+
+  // * catchAll 404 page
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 

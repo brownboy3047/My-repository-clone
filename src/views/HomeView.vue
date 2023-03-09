@@ -42,6 +42,9 @@ export default {
 }
 
 .error {
+  margin-top: 20px;
   text-align: center;
+  font-size: 20px;
+  color: black;
 }
 </style>

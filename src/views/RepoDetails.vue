@@ -87,7 +87,9 @@ export default {
   border-radius: 0 0 0 6px;
 }
 .error {
+  margin-top: 20px;
   text-align: center;
   font-size: 20px;
+  color: black;
 }
 </style>

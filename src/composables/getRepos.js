@@ -8,14 +8,14 @@ const getRepos = () => {
   const load = async () => {
     try {
       //*simulate delay
-      //   await new Promise((resolve) => {
-      //     setTimeout(resolve, 2000);
-      //   });
+      // await new Promise((resolve) => {
+      //   setTimeout(resolve, 2000);
+      // });
 
       let data = await fetch("https://api.github.com/users/brownboy3047/repos");
 
       if (!data.ok) {
-        throw Error("no data is available");
+        throw Error("No data is available");
       }
 
       repos.value = await data.json();
